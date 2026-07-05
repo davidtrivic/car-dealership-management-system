@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.KupciController"
+      spacing="15">
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Kupci" styleClass="title-2"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <TextField fx:id="fieldPretraga" promptText="Pretraži po imenu ili JMB..."
+                   prefWidth="250" onKeyReleased="#pretraziKupce"/>
+        <Button text="Dodaj kupca" styleClass="accent" onAction="#otvoriDodajKupca">
+            <graphic><FontIcon iconLiteral="mdi2p-plus" iconSize="16"/></graphic>
+        </Button>
+    </HBox>
+
+    <Separator/>
+
+    <TableView fx:id="tabelaKupaca" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colJMB" text="JMB" prefWidth="140"/>
+            <TableColumn fx:id="colIme" text="Ime" prefWidth="120"/>
+            <TableColumn fx:id="colPrezime" text="Prezime" prefWidth="120"/>
+            <TableColumn fx:id="colAdresa" text="Adresa" prefWidth="180"/>
+            <TableColumn fx:id="colTelefon" text="Telefon" prefWidth="120"/>
+            <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+        </columns>
+        <placeholder>
+            <Label text="Nema kupaca za prikaz"/>
+        </placeholder>
+    </TableView>
+
+</VBox>

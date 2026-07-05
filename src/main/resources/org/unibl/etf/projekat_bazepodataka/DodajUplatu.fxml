@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.DodajUplatuController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label text="Dodaj uplatu" styleClass="title-3"/>
+    <Separator style="-fx-padding: 5 0 10 0;"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="12" style="-fx-padding: 5 10 5 0;">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Iznos rate (KM):" prefWidth="150"/>
+                <TextField fx:id="fieldIznos" prefWidth="220"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Datum uplate:" prefWidth="150"/>
+                <DatePicker fx:id="datumUplate" prefWidth="220"/>
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Odustani" onAction="#odustani"/>
+        <Button text="Potvrdi" styleClass="accent" onAction="#sacuvaj"/>
+    </HBox>
+
+</VBox>

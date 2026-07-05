@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.DetaljiVozilaController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label fx:id="lblNaslov" styleClass="title-3" style="-fx-padding: 0 0 10 0;"/>
+    <Separator style="-fx-padding: 0 0 10 0;"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS" style="-fx-padding: 10 0 10 0;">
+        <VBox spacing="8">
+
+            <Label text="Osnovni podaci" styleClass="text-bold"/>
+            <GridPane hgap="10" vgap="6">
+                <Label text="VIN:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblVIN" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Marka:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblMarka" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Model:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblModel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Godište:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblGodiste" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="Boja:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblBoja" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label text="Opis:" GridPane.columnIndex="0" GridPane.rowIndex="5" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblOpis" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <Label text="Tip:" GridPane.columnIndex="0" GridPane.rowIndex="6" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblTip" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+            </GridPane>
+
+            <Separator style="-fx-padding: 5 0 5 0;"/>
+            <Label text="Tehnička specifikacija" styleClass="text-bold"/>
+            <GridPane hgap="10" vgap="6">
+                <Label text="Kilometraža:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblKilometraza" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Zapremina motora:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblZapremina" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Vrsta goriva:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblGorivo" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label text="Pogon:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblPogon" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="Oprema:" GridPane.columnIndex="0" GridPane.rowIndex="4" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblOprema" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+            </GridPane>
+
+            <Separator style="-fx-padding: 5 0 5 0;"/>
+            <Label text="Komercijalni podaci" styleClass="text-bold"/>
+            <GridPane hgap="10" vgap="6">
+                <Label text="Nabavna cijena:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblNabavnaCijena" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                <Label text="Prodajna cijena:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblProdajnaCijena" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: gray;"/>
+                <Label fx:id="lblStatus" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            </GridPane>
+
+            <Separator style="-fx-padding: 5 0 5 0;"/>
+            <VBox fx:id="vboxDinamicko" spacing="6">
+                <Label fx:id="lblDinamickoNaslov" styleClass="text-bold"/>
+                <GridPane hgap="10" vgap="6">
+                    <Label fx:id="lblDinamickoKey" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                    <Label fx:id="lblDinamickoValue" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                </GridPane>
+            </VBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Zatvori" onAction="#zatvori"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.VozilaController"
+      spacing="15">
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Vozila" styleClass="title-2"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="filterStatus" promptText="Svi statusi" prefWidth="150"/>
+        <Button text="Dodaj vozilo" styleClass="accent" onAction="#otvoriDodajVozilo">
+            <graphic><FontIcon iconLiteral="mdi2p-plus" iconSize="16"/></graphic>
+        </Button>
+    </HBox>
+
+    <Separator/>
+
+    <TableView fx:id="tabelaVozila" VBox.vgrow="ALWAYS" onMouseClicked="#onKlikVozilo">
+        <columns>
+            <TableColumn fx:id="colVIN" text="VIN" prefWidth="170"/>
+            <TableColumn fx:id="colMarka" text="Marka" prefWidth="100"/>
+            <TableColumn fx:id="colModel" text="Model" prefWidth="100"/>
+            <TableColumn fx:id="colGodiste" text="Godište" prefWidth="70"/>
+            <TableColumn fx:id="colBoja" text="Boja" prefWidth="80"/>
+            <TableColumn fx:id="colKilometraza" text="Km" prefWidth="80"/>
+            <TableColumn fx:id="colGorivo" text="Gorivo" prefWidth="80"/>
+            <TableColumn fx:id="colCijena" text="Cijena (KM)" prefWidth="100"/>
+            <TableColumn fx:id="colStatus" text="Status" prefWidth="100"/>
+            <TableColumn fx:id="colTip" text="Tip" prefWidth="80"/>
+        </columns>
+        <placeholder>
+            <Label text="Nema vozila za prikaz"/>
+        </placeholder>
+    </TableView>
+
+</VBox>

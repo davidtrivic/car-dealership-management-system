@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.TestnaVoznjaController"
+      spacing="15">
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Testne vožnje" styleClass="title-2"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button text="Zakaži testnu vožnju" styleClass="accent" onAction="#otvoriNovaTestnaVoznja">
+            <graphic><FontIcon iconLiteral="mdi2p-plus" iconSize="16"/></graphic>
+        </Button>
+    </HBox>
+
+    <Separator/>
+
+    <TableView fx:id="tabelaTestnihVoznji" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colDatum" text="Datum" prefWidth="100"/>
+            <TableColumn fx:id="colVozilo" text="Vozilo" prefWidth="180"/>
+            <TableColumn fx:id="colVIN" text="VIN" prefWidth="160"/>
+            <TableColumn fx:id="colKupac" text="Kupac" prefWidth="160"/>
+            <TableColumn fx:id="colAgent" text="Agent" prefWidth="160"/>
+        </columns>
+        <placeholder>
+            <Label text="Nema testnih vožnji za prikaz"/>
+        </placeholder>
+    </TableView>
+
+</VBox>

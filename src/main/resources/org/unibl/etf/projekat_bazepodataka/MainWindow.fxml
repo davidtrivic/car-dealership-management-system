@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="org.unibl.etf.projekat_bazepodataka.ui.MainController"
+            prefWidth="1200" prefHeight="700"
+            styleClass="bg-default">
+
+  <top>
+    <HBox styleClass="navbar" spacing="10" alignment="CENTER" style="-fx-border-color: #2c3e50; -fx-border-width: 0 0 1px 0; -fx-border-style: solid;">
+      <padding><Insets top="12" right="12" bottom="12" left="20"/></padding>
+      <Label text="Autosalon" styleClass="title-2"/>
+    </HBox>
+  </top>
+
+  <left>
+    <VBox styleClass="sidebar" prefWidth="200" spacing="5">
+      <padding><Insets top="20" right="10" bottom="20" left="10"/></padding>
+
+      <Label text="NAVIGACIJA" styleClass="text-muted"
+             style="-fx-font-size: 11px; -fx-padding: 0 0 8 8;"/>
+
+      <Button fx:id="btnVozila" text="Vozila" maxWidth="Infinity"
+              onAction="#prikaziVozila" styleClass="flat" alignment="CENTER_LEFT" underline="false">
+        <graphic><FontIcon iconLiteral="mdi2c-car" iconSize="16"/></graphic>
+      </Button>
+
+      <Button fx:id="btnKupci" text="Kupci" maxWidth="Infinity"
+              onAction="#prikaziKupce" styleClass="flat" alignment="CENTER_LEFT" underline="false">
+        <graphic><FontIcon iconLiteral="mdi2a-account-group" iconSize="16"/></graphic>
+      </Button>
+
+      <Button fx:id="btnProdaja" text="Prodaja" maxWidth="Infinity"
+              onAction="#prikaziProdaju" styleClass="flat" alignment="CENTER_LEFT" underline="false">
+        <graphic><FontIcon iconLiteral="mdi2c-cash-register" iconSize="16"/></graphic>
+      </Button>
+
+      <Button fx:id="btnTestneVoznje" text="Testne vožnje" maxWidth="Infinity"
+              onAction="#prikaziTestneVoznje" styleClass="flat" alignment="CENTER_LEFT" underline="false">
+        <graphic><FontIcon iconLiteral="mdi2s-steering" iconSize="16"/></graphic>
+      </Button>
+
+
+    </VBox>
+  </left>
+
+  <center>
+    <StackPane fx:id="contentArea" styleClass="bg-subtle">
+      <padding><Insets top="5" right="5" bottom="5" left="5"/></padding>
+      <Label text="Dobrodošli u sistem autosalona"
+             styleClass="title-3" StackPane.alignment="CENTER"/>
+    </StackPane>
+  </center>
+
+</BorderPane>

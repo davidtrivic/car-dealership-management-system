@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.DodajVoziloController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label text="Dodaj vozilo" styleClass="title-3"/>
+    <Separator style="-fx-padding: 5 0 10 0;"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" style="-fx-padding: 5 10 5 0;">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Tip vozila:" prefWidth="170"/>
+                <ComboBox fx:id="tipVozila" promptText="Odaberite tip"
+                          prefWidth="250" onAction="#tipVozilaPromjenjen"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="VIN:" prefWidth="170"/>
+                <TextField fx:id="fieldVIN" promptText="17 znakova" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Marka:" prefWidth="170"/>
+                <TextField fx:id="fieldMarka" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Model:" prefWidth="170"/>
+                <TextField fx:id="fieldModel" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Godište:" prefWidth="170"/>
+                <TextField fx:id="fieldGodiste" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Boja:" prefWidth="170"/>
+                <TextField fx:id="fieldBoja" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Kilometraža:" prefWidth="170"/>
+                <TextField fx:id="fieldKilometraza" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Zapremina motora (cc):" prefWidth="170"/>
+                <TextField fx:id="fieldZapremina" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Vrsta goriva:" prefWidth="170"/>
+                <ComboBox fx:id="vrstaGoriva" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Pogon:" prefWidth="170"/>
+                <ComboBox fx:id="pogon" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Oprema:" prefWidth="170"/>
+                <TextField fx:id="fieldOprema" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Nabavna cijena (KM):" prefWidth="170"/>
+                <TextField fx:id="fieldNabavnaCijena" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Prodajna cijena (KM):" prefWidth="170"/>
+                <TextField fx:id="fieldProdajnaCijena" prefWidth="250"/>
+            </HBox>
+            <HBox fx:id="hboxDinamicko" spacing="10" alignment="CENTER_LEFT">
+                <Label fx:id="labelDinamicko" prefWidth="170"/>
+                <TextField fx:id="fieldDinamicko" prefWidth="250"/>
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Odustani" onAction="#odustani"/>
+        <Button text="Sačuvaj" styleClass="accent" onAction="#sacuvaj"/>
+    </HBox>
+
+</VBox>

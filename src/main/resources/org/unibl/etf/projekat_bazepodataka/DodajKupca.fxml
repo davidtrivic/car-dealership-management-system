@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.DodajKupcaController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label text="Dodaj kupca" styleClass="title-3"/>
+    <Separator style="-fx-padding: 5 0 10 0;"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" style="-fx-padding: 5 10 5 0;">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="JMB:" prefWidth="150"/>
+                <TextField fx:id="fieldJMB" promptText="13 znakova" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Ime:" prefWidth="150"/>
+                <TextField fx:id="fieldIme" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Prezime:" prefWidth="150"/>
+                <TextField fx:id="fieldPrezime" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Adresa:" prefWidth="150"/>
+                <TextField fx:id="fieldAdresa" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Telefon:" prefWidth="150"/>
+                <TextField fx:id="fieldTelefon" prefWidth="250"/>
+            </HBox>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Email:" prefWidth="150"/>
+                <TextField fx:id="fieldEmail" prefWidth="250"/>
+            </HBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Odustani" onAction="#odustani"/>
+        <Button text="Sačuvaj" styleClass="accent" onAction="#sacuvaj"/>
+    </HBox>
+
+</VBox>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.DetaljiProdajeController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label fx:id="lblNaslov" styleClass="title-3" style="-fx-padding: 0 0 10 0;"/>
+    <Separator style="-fx-padding: 0 0 10 0;"/>
+
+    <TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+        <Tab text="Detalji">
+            <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+                <VBox spacing="8">
+
+                    <Label text="Vozilo" styleClass="text-bold"/>
+                    <GridPane hgap="10" vgap="6">
+                        <Label text="VIN:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblVIN" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label text="Marka:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblMarka" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Model:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblModel" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Label text="Godiste:" GridPane.columnIndex="0" GridPane.rowIndex="3" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblGodiste" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    </GridPane>
+
+                    <Separator/>
+                    <Label text="Kupac" styleClass="text-bold"/>
+                    <GridPane hgap="10" vgap="6">
+                        <Label text="JMB:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblJMB" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label text="Ime i prezime:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblKupac" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </GridPane>
+
+                    <Separator/>
+                    <Label text="Agent" styleClass="text-bold"/>
+                    <GridPane hgap="10" vgap="6">
+                        <Label text="ID:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblAgentId" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label text="Agent:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblAgent" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    </GridPane>
+
+                    <Separator/>
+                    <Label text="Transakcija" styleClass="text-bold"/>
+                    <GridPane hgap="10" vgap="6">
+                        <Label text="Datum prodaje:" GridPane.columnIndex="0" GridPane.rowIndex="0" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblDatum" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label text="Cijena:" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblCijena" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Način plaćanja:" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-text-fill: gray;"/>
+                        <Label fx:id="lblTipPlacanja" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </GridPane>
+
+                </VBox>
+            </ScrollPane>
+        </Tab>
+
+        <Tab text="Uplate">
+            <VBox spacing="10" style="-fx-padding: 10;">
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label fx:id="lblStatusUplata" styleClass="text-muted"/>
+                    <Pane HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="btnDodajUplatu" text="Dodaj uplatu"
+                            styleClass="accent" onAction="#otvoriDodajUplatu"/>
+                </HBox>
+
+                <TableView fx:id="tabelaUplata" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colIdUplate" text="ID" prefWidth="60"/>
+                        <TableColumn fx:id="colDatumUplate" text="Datum" prefWidth="120"/>
+                        <TableColumn fx:id="colIznosUplate" text="Iznos (KM)" prefWidth="120"/>
+                    </columns>
+                    <placeholder><Label text="Nema uplata"/></placeholder>
+                </TableView>
+
+            </VBox>
+        </Tab>
+
+    </TabPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Zatvori" onAction="#zatvori"/>
+    </HBox>
+
+</VBox>

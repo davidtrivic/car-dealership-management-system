@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.NovaProdajaController"
+      spacing="0" style="-fx-padding: 20;">
+
+    <Label text="Nova prodaja" styleClass="title-3"/>
+    <Separator style="-fx-padding: 5 0 10 0;"/>
+
+    <ScrollPane fitToWidth="true" VBox.vgrow="ALWAYS">
+        <VBox spacing="10" style="-fx-padding: 5 10 5 0;">
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Vozilo (VIN):" prefWidth="160"/>
+                <ComboBox fx:id="comboVozilo" prefWidth="280" promptText="Odaberite vozilo"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Kupac:" prefWidth="160"/>
+                <ComboBox fx:id="comboKupac" prefWidth="280" promptText="Odaberite kupca"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Agent:" prefWidth="160"/>
+                <ComboBox fx:id="comboAgent" prefWidth="280" promptText="Odaberite agenta"/>
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Cijena (KM):" prefWidth="160"/>
+                <TextField fx:id="fieldCijena" prefWidth="280"/>
+            </HBox>
+
+            <Separator/>
+            <Label text="Način plaćanja" styleClass="text-bold"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Tip plaćanja:" prefWidth="160"/>
+                <ComboBox fx:id="comboTipPlacanja" prefWidth="280"
+                          onAction="#tipPlacanjaPromjenjen"/>
+            </HBox>
+
+            <VBox fx:id="vboxKreditPolja" spacing="10" managed="false" visible="false">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Banka:" prefWidth="160"/>
+                    <TextField fx:id="fieldBanka" prefWidth="280"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Broj rata:" prefWidth="160"/>
+                    <TextField fx:id="fieldBrojRata" prefWidth="280"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Iznos rate (KM):" prefWidth="160"/>
+                    <TextField fx:id="fieldIznosRate" prefWidth="280"/>
+                </HBox>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <Label text="Avans (KM):" prefWidth="160"/>
+                    <TextField fx:id="fieldAvans" prefWidth="280"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </ScrollPane>
+
+    <Separator style="-fx-padding: 10 0 0 0;"/>
+    <HBox spacing="10" alignment="CENTER_RIGHT" style="-fx-padding: 10 0 0 0;">
+        <Button text="Odustani" onAction="#odustani"/>
+        <Button text="Potvrdi prodaju" styleClass="accent" onAction="#sacuvaj"/>
+    </HBox>
+
+</VBox>

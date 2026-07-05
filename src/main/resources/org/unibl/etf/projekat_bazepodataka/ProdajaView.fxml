@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.unibl.etf.projekat_bazepodataka.ui.ProdajaController"
+      spacing="15">
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Label text="Prodaja" styleClass="title-2"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button text="Nova prodaja" styleClass="accent" onAction="#otvoriNovaProdaja">
+            <graphic><FontIcon iconLiteral="mdi2p-plus" iconSize="16"/></graphic>
+        </Button>
+    </HBox>
+
+    <Separator/>
+
+    <TabPane VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+
+        <Tab text="Sve prodaje">
+            <TableView fx:id="tabelaProdaja" onMouseClicked="#onKlikProdaja">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="50"/>
+                    <TableColumn fx:id="colDatum" text="Datum" prefWidth="100"/>
+                    <TableColumn fx:id="colVozilo" text="Vozilo" prefWidth="180"/>
+                    <TableColumn fx:id="colKupac" text="Kupac" prefWidth="150"/>
+                    <TableColumn fx:id="colAgent" text="Agent" prefWidth="150"/>
+                    <TableColumn fx:id="colTipPlacanja" text="Plaćanje" prefWidth="100"/>
+                    <TableColumn fx:id="colCijena" text="Cijena (KM)" prefWidth="110"/>
+                </columns>
+                <placeholder><Label text="Nema prodaja za prikaz"/></placeholder>
+            </TableView>
+        </Tab>
+
+        <Tab text="Po agentu">
+            <TableView fx:id="tabelaPoAgentu">
+                <columns>
+                    <TableColumn fx:id="colAgentId" text="ID Agenta" prefWidth="200"/>
+                    <TableColumn fx:id="colAgentIme" text="Agent" prefWidth="200"/>
+                    <TableColumn fx:id="colBrojProdaja" text="Broj prodaja" prefWidth="120"/>
+                    <TableColumn fx:id="colUkupnaVrijednost" text="Ukupna vrijednost (KM)" prefWidth="200"/>
+                </columns>
+                <placeholder><Label text="Nema podataka"/></placeholder>
+            </TableView>
+        </Tab>
+
+    </TabPane>
+
+</VBox>
